@@ -75,4 +75,10 @@ public class ExpenseCommands {
 
     }
 
+
+    @ShellMethod(key = "expense-tracker list", value = "Get all expenses")
+    public String getExpenses() {
+        return expenseService.getExpenses();
+    }
+
 }

@@ -117,3 +117,7 @@
 1728068004267:expense-tracker add --description "hot dog" --amount 3 --type
 1728068014580:expense-tracker add --description "hot dog" --amount 3 --type comida
 1728068022647:expense-tracker add --description "hot dog" --amount 3 --type food
+1728069130489:expense-tracker list
+1728072261856:expense-tracker lis
+1728072267539:expense-tracker list}
+1728072270513:expense-tracker list

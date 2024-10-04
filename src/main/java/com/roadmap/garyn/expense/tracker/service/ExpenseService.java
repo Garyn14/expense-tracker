@@ -5,4 +5,5 @@ import jakarta.validation.Valid;
 
 public interface ExpenseService {
     String saveExpense(@Valid Expense expense);
+    String getExpenses();
 }

@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
+
 @Service
 @Validated
 public class ExpenseServiceImpl implements ExpenseService{
@@ -27,5 +29,27 @@ public class ExpenseServiceImpl implements ExpenseService{
         return "Expense added successfully (ID: " + expenseCreated.getId() + ")";
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public String getExpenses() {
+        List<Expense> expenses = expenseRepository.findAll();
 
+        StringBuilder output = new StringBuilder();
+        String header = String.format("# %-4s %-20s %-10s %-20s", "ID", "Description", "Amount", "Type");
+        output.append(header).append("\n");
+        output.append("-".repeat(header.length())).append("\n");
+
+        for (Expense expense : expenses) {
+            String row = String.format(
+                    "# %-4d %-20s $%-10.2f %-20s",
+                    expense.getId(),
+                    expense.getDescription(),
+                    expense.getAmount(),
+                    expense.getExpenseType().getExpense()
+            );
+            output.append(row).append("\n");
+        }
+
+        return output.toString();
+    }
 }
