@@ -121,3 +121,22 @@
 1728072261856:expense-tracker lis
 1728072267539:expense-tracker list}
 1728072270513:expense-tracker list
+1728074230244:expense-tracker delete --id
+1728074348316:expense-tracker delete
+1728074354286:expense-tracker delete --id
+1728074440660:expense-tracker delete
+1728074462690:stacktrace
+1728074644509:expense-tracker
+1728074663468:expense-tracker delete
+1728074814572:expense-tracker delete --id
+1728074874665:expense-tracker delete --id a
+1728075334561:expense-tracker delete
+1728075373298:expense-tracker delete --id
+1728075605658:expense-tracker delete
+1728075612875:expense-tracker delete --id
+1728075780204:expense-tracker delete --id a
+1728075790112:expense-tracker delete --id @
+1728075851238:expense-tracker delete --id 0
+1728075855921:expense-tracker delete --id -2
+1728075926345:expense-tracker delete --id 100
+1728076020709:expense-tracker delete --id 1

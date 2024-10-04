@@ -1,12 +1,11 @@
 package com.roadmap.garyn.expense.tracker.service;
 
+import com.roadmap.garyn.expense.tracker.exception.ExpenseNotFoundException;
 import com.roadmap.garyn.expense.tracker.model.Expense;
 import com.roadmap.garyn.expense.tracker.repository.ExpenseRepository;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
@@ -51,5 +50,20 @@ public class ExpenseServiceImpl implements ExpenseService{
         }
 
         return output.toString();
+    }
+
+    @Override
+    @Transactional
+    public String deleteExpense(Long id) {
+        try {
+
+            Expense  expense = expenseRepository.findById(id)
+                    .orElseThrow(() -> new ExpenseNotFoundException(id));
+            expenseRepository.delete(expense);
+            return "Expense deleted successfully";
+
+        } catch (ExpenseNotFoundException e) {
+            return e.getMessage();
+        }
     }
 }

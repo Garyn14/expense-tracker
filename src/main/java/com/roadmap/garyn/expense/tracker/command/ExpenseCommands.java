@@ -81,4 +81,19 @@ public class ExpenseCommands {
         return expenseService.getExpenses();
     }
 
+    @ShellMethod(key = "expense-tracker delete", value = "Delete an expense by id")
+    public String deleteExpense(@ShellOption(defaultValue = "") String id) {
+
+        long idLong;
+        if (id == null || id.isEmpty()) return "ERROR: Id is required";
+
+        try {
+            idLong = Long.parseLong(id);
+        } catch (NumberFormatException e) {
+            return "ERROR: Invalid id";
+        }
+
+        if (idLong <= 0) return "ERROR: Invalid id";
+        return expenseService.deleteExpense(idLong);
+    }
 }
