@@ -20,6 +20,4 @@ public enum ExpenseType {
     public String toString() {
         return expense;
     }
-
-
 }

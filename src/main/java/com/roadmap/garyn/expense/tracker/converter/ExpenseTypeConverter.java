@@ -1,6 +1,7 @@
 package com.roadmap.garyn.expense.tracker.converter;
 
 import com.roadmap.garyn.expense.tracker.enums.ExpenseType;
+
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
@@ -22,9 +23,9 @@ public class ExpenseTypeConverter implements AttributeConverter<ExpenseType, Str
             return null;
         }
 
-        for (ExpenseType expenseType : ExpenseType.values()) {
-            if (expenseType.getExpense().equals(dbData)) {
-                return expenseType;
+        for (ExpenseType type : ExpenseType.values()) {
+            if (type.getExpense().equalsIgnoreCase(dbData)) {
+                return type;
             }
         }
 

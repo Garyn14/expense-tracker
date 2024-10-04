@@ -4,3 +4,116 @@
 1727931266406:script
 1727931273355:quit
 1727976496006:help
+1728009807557:save-expense "computadora" 5400.00
+1728009838447:save-expense --description computadora --amount 5400
+1728009855656:stacktrace
+1728010263031:save-expense --description prueba --amount 5400
+1728010350968:save-expense computadora 5400
+1728010837167:package com.roadmap.garyn.expense.tracker.converter;
+1728010837185:import com.roadmap.garyn.expense.tracker.enums.ExpenseType;
+1728010837191:import jakarta.persistence.AttributeConverter;
+1728010837197:import jakarta.persistence.Converter;
+1728010837202:@Converter(autoApply = true)
+1728010837212:public class ExpenseTypeConverter implements AttributeConverter<ExpenseType, String>{
+1728010837266:}
+1728010841570:clear
+1728010857190:save-expense computadora 5400
+1728011111071:save-expense computadora 5400 OTHER
+1728011310404:save-expense pc 5400
+1728020675135:stacktrace
+1728020708857:save-expence pc 5400 OTHER
+1728020725824:save-expense pc 5400 OTHER
+1728020736250:save-expense pc 5400 other
+1728020833444:stacktrace
+1728020861654:save-expense pc 5400 OTHER
+1728020936495:save-expense pc 5400 other
+1728020959262:save-expense pc 5400 OTHER
+1728021212726:save-expense "hot dog" 3.00 food
+1728021222246:stacktrace
+1728021430119:save-expense "pan" 2.00 food
+1728021450874:save-expense "pan" 2.00 FOOD
+1728023446538:expense-tracker add --description "Lunch" --amount 20 --type FOOD
+1728023612820:expense-tracker add --description "chocolate" --amount 5
+1728023630468:expense-tracker add --description "chocolate" --amount 5 --type food
+1728023789704:expense-tracker add --description "mouse" --amount 150.30
+1728024049162:expense-tracker add --description "mother board" --amount 531.21 --type food
+1728024081570:expense-tracker add --description "mother board" --amount 531.21 --type papotico
+1728024090116:stacktrace
+1728024127944:expense-tracker add --description "mother board" --amount 531.21 --type FOOD
+1728024582180:expense-tracker add --description "bed" --amount --type "bed"
+1728024635527:expense-tracker add --description "bed" --amount 550.32 --type "bed"
+1728025409329:expense-tracker cigarro -13
+1728025433840:expense-tracker add cigarro -13
+1728025442541:stacktrace
+1728059261430:expense-tracker add "" 54
+1728059283330:expense-tracker add "" -1
+1728059316112:expense-tracker add --description "food" --amount -12
+1728059384789:shell:>
+1728059408407:expense-tracker add --description "a" --amount -12
+1728061956813:expense-tracker add --description --amount -12
+1728062234675:expense-tracker add --description  --amount -12
+1728062306481:expense-tracker add --description "a" --amount -12
+1728062312443:expense-tracker add --description --amount -12
+1728062517447:expense-tracker add --description --amount 20
+1728062529783:expense-tracker add --description "auto" --amount
+1728062815759:clear
+1728062817399:expense
+1728063262770:expense-tracker add --description --amount 1
+1728063520356:expense-tracker add --description "" --amount 1
+1728063607504:expense-tracker add --description "a" --amount 1
+1728063711182:expense-tracker add --description "expense 1" --amount @
+1728064057373:stacktrace
+1728064243876:expense-tracker add --description "expense 1" --amount @
+1728064462033:expense-tracker add --description "expense 1" --amount @123
+1728064470153:expense-tracker add --description "expense 1" --amount 0
+1728064474658:expense-tracker add --description "expense 1" --amount -1
+1728064501712:expense-tracker add --description "expense 1" --amount
+1728064570336:stacktrace
+1728064903632:expense-tracker add --description --amount -12
+1728064909383:expense-tracker add --description "a" --amount 20
+1728064919717:expense-tracker add --description --amount 20
+1728064927959:expense-tracker add --description "a" --amount 20
+1728064939849:expense-tracker add --description "" --amount 20
+1728065252475:expense-tracker add --description "expense 1" --amount @
+1728065335008:expense-tracker add --description "expense 1" --amount 0
+1728065341976:expense-tracker add --description "expense 1" --amount
+1728065418606:expense-tracker add --description "expense 1" --amount 12.123
+1728065436540:expense-tracker add --description "expense 1" --amount 12.@
+1728065490682:expense-tracker add --description "expense 1" --amount 99999999.00
+1728065494796:expense-tracker add --description "expense 1" --amount 999999990.00
+1728065609750:expense-tracker add --description "expense 1" --amount 20 --type soda
+1728065692433:expense-tracker add --description "expense 1" --amount 1 --type
+1728065760729:expense-tracker add --description "expense 1" --amount 1 --type 123
+1728065778557:expense-tracker add --description --amount  --type
+1728065783368:expense-tracker add --description "expense 1" --amount 1 --type food
+1728065798405:expense-tracker add --description --amount  --type food
+1728065807744:expense-tracker add --description --amount 0 --type food
+1728065829277:expense-tracker add --description "" --amount 0 --type food
+1728065871865:expense-tracker add --description "" --amount 1 --type food
+1728065879966:expense-tracker add --description "q" --amount 0 --type food
+1728066199010:expense-tracker add --description --amount --type
+1728066214839:expense-tracker add --description --amount --type papotico
+1728066223813:expense-tracker add --description --amount --type food
+1728066233346:expense-tracker add --description --amount -5 --type food
+1728066240154:expense-tracker add --description --amount 5 --type food
+1728066247339:expense-tracker add --description "" --amount 5 --type food
+1728066257185:expense-tracker add --description "golosinas" --amount 5 --type food
+1728066543034:expense-tracker add --description "papelotes" --amount 2 --type utilities@
+1728066626281:expense-tracker add --description "papelotes" --amount 2 --type utilities
+1728066660567:expense-tracker add --description "papelotes" --amount 2 --type other
+1728066694578:expense-tracker add --description "papelotes" --amount 2 --type utilitie
+1728066803611:expense-tracker add --description "papelotes" --amount 2
+1728066809784:expense-tracker add --description "papelotes" --amount 2 --type utilities
+1728066848107:expense-tracker add --description "papelotes" --amount 2 --type food
+1728066861475:expense-tracker add --description "papelotes" --amount 2 --type transportation
+1728066947159:stacktrace
+1728067385728:expense-tracker add --description "nuggets" --amount 35.20 --type food
+1728067757307:expense-tracker add --description "papers" --amount 0.40 --type utilities
+1728067787905:expense-tracker add --description "dog for my cat" --amount 25.40
+1728067950534:expense-tracker add --description "dog for my cat" --amount 25.40 --type papers
+1728067965880:expense-tracker add --description "dog for my cat" --amount 25.40 --type others
+1728067982863:expense-tracker add --description "" --amount 25.40
+1728067997388:expense-tracker add --description "hot dog" --amount -3
+1728068004267:expense-tracker add --description "hot dog" --amount 3 --type
+1728068014580:expense-tracker add --description "hot dog" --amount 3 --type comida
+1728068022647:expense-tracker add --description "hot dog" --amount 3 --type food

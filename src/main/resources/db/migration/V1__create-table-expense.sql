@@ -1,5 +1,5 @@
 -- create ENUM for Expense type
-CREATE TYPE expense_type AS ENUM ('food', 'travel', 'entertainment', 'other');
+CREATE TYPE expense_type AS ENUM ('food', 'transportation', 'utilities', 'entertainment', 'other');
 
 -- create table for Expenses
 CREATE TABLE expenses(
