@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Table(name = "expenses")
 @Getter @Setter
 @Builder @AllArgsConstructor
+@ToString
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

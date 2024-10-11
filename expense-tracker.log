@@ -140,3 +140,270 @@
 1728075855921:expense-tracker delete --id -2
 1728075926345:expense-tracker delete --id 100
 1728076020709:expense-tracker delete --id 1
+1728086191932:expense-tracker update --id 2 --description "cambio"
+1728086471793:expense-tracker update --id 2 --description cambio
+1728086642183:expense-tracker update --id 2 --description "cambio"
+1728088020003:expense-tracker update --id 2 --description cambio
+1728088152857:expense-tracker update id 2 --description cambio
+1728088230594:expense-tracker add --description "prueba001" --amount 23.30
+1728088378285:expense-tracker list
+1728088460215:help
+1728088520122:expense-tracker update --id 3 --description "update"
+1728088800273:expense-tracker update --id 20 --description hola
+1728088815312:stacktrace
+1728089072886:expense-tracker update --id 20 --description hola
+1728089083696:expense-tracker update 20 --description hola
+1728089104226:expense-tracker update --id 20 --description hola
+1728089842191:shell:>expense-tracker update --id 20 --description hola
+1728089986372:expense-tracker update --id 20 --description hola
+1728090091311:expense-tracker update --id 3 --description hola
+1728090620192:expense-tracker update
+1728090638850:expense-tracker update --id
+1728090656434:expense-tracker update --id 1
+1728090830992:expense-tracker update --id 2
+1728091043362:expense-tracker update --id 2 --description "pc"
+1728091082428:expense-tracker update --id 2 --description p
+1728091228633:expense-tracker update --id 2 --amount 25
+1728091236443:stacktrace
+1728091627592:expense-tracker update --id 2 --amount 100
+1728091740234:expense-tracker update --id 2 --amount -20
+1728092774989:expense-tracker update --id 2 --description "prueba description 001"
+1728092833033:stacktrace
+1728094882549:expense-tracker update --id 2 --description "prueba_"
+1728094921138:expense-tracker update --id 2 --description "prueba_" --amount 10
+1728094936593:expense-tracker update --id 2 --amount 10
+1728095402199:expense-tracker update
+1728095416556:expense-tracker update --id
+1728095426312:expense-tracker update --id 2
+1728095696587:expense-tracker update --id 0
+1728095700325:expense-tracker update --id -1
+1728095707142:expense-tracker update --id @
+1728095725748:expense-tracker update --id 2 --description p
+1728095752021:expense-tracker update --id --description ""
+1728095760421:expense-tracker update --id 2 --description ""
+1728096133402:expense-tracker update --id 2 --amount ""
+1728098868218:expense-tracker update --id 2 --description ""
+1728098897551:expense-tracker update --id 2 --amount ""
+1728098930474:expense-tracker add --description "prueba002" --amount 32
+1728098996607:expense-tracker add --description "prueba002" --amount 35
+1728099057756:expense-tracker add --description "prueba002" --amount
+1728099065418:expense-tracker add --description "prueba002" --amount ""
+1728108486952:expense-tracker update
+1728108493698:expense-tracker update --id
+1728108509554:expense-tracker update --id -1
+1728108519037:expense-tracker update --id @
+1728108714169:expense-tracker update --id ""
+1728108723004:expense-tracker update --id 2 --description
+1728343832609:prueba
+1728343837547:test
+1728343845519:test 1
+1728343874401:test --a
+1728343890020:test --a "@"
+1728343949136:test 1
+1728343955604:test --a
+1728344051013:test --a ""
+1728344166819:test
+1728344233509:test --a --b
+1728344239512:test --a 1 --b
+1728344244963:test --a 1 --b 2
+1728344647137:test 2
+1728344650301:test 0
+1728345123958:help
+1728345140308:stacktrace
+1728346267759:test
+1728346270762:test -1
+1728346275591:test --a -1
+1728346360907:test --a @
+1728346533961:test
+1728346565669:test --a
+1728346572841:test --a ""
+1728346584750:--a
+1728358297556:expense-tracker add --description "" --amount 12
+1728358319142:expense-tracker add --description "" --amount @
+1728358379650:expense-tracker add --description "" --amount
+1728358403677:expense-tracker add --description "" --amount 12 --type
+1728358444932:expense-tracker add --description "" --amount 12 --type aqc
+1728358497116:expense-tracker add --description "" --amount 12
+1728363461337:expense-tracker update
+1728363501350:expense-tracker update --id 1
+1728363571877:expense-tracker update --id
+1728363578973:expense-tracker update --id ""
+1728363626687:expense-tracker update --id 2 --description "h" --amount ""
+1728363670669:expense-tracker update --id 2 --description "h" --amount "" --type
+1728363695396:expense-tracker update --id 2 --description "h" --amount "12"
+1728363715785:expense-tracker update --id 2 --description "h" --amount -1
+1728363720830:expense-tracker update --id 2 --description "hola" --amount ""
+1728363730039:expense-tracker update --id 2 --description "hola" --amount -1
+1728363736059:expense-tracker update --id @ --description "hola" --amount -1
+1728363761972:expense-tracker update --id ""
+1728363772300:expense-tracker update --id 0
+1728363802887:expense-tracker update
+1728363885312:expense-tracker update --id @
+1728363894989:expense-tracker update --id
+1728363900586:expense-tracker update --id ""
+1728363906866:expense-tracker update --id 1 --amount ""
+1728363935619:expense-tracker update --id --amount 12 --type
+1728363943905:expense-tracker update --id 1 --amount 12 --type
+1728364141597:expense-tracker update --id 1 --amount
+1728364148008:expense-tracker update --id
+1728364158935:expense-tracker update --id --amount 12 --type
+1728364176961:expense-tracker update --id 2 --amount 12 --type
+1728364856173:expense-tracker update --id --amount 12 --type
+1728364861741:expense-tracker update --id 2 --amount 12 --type
+1728364912174:expense-tracker update --id 1 --amount 12 --type
+1728503548658:expense-tracker add
+1728503571817:>expense-tracker add --amount
+1728503593187:expense-tracker add --amount
+1728503598516:expense-tracker add --amount -1
+1728503601701:expense-tracker add --amount 10
+1728503608699:expense-tracker add --amount --description
+1728503614806:expense-tracker add --amount 12 --description
+1728503622989:expense-tracker add --amount 12 --description "sonseras"
+1728503725394:expense-tracker update
+1728503734403:expense-tracker update --id
+1728503753033:expense-tracker update --id 0
+1728503788343:expense-tracker update --id 7 --description "nuevo" --amount 100 --type utilities
+1728503810449:expense-tracker update --id 7 --description "nuevo" --amount 100 --type
+1728503826954:expense-tracker update --id 7 --description "nuevo" --amount 100 --type ""
+1728503834659:expense-tracker update --id 7 --description "nuevo" --amount 1 --type
+1728503846273:expense-tracker update --id 7 --description "nuevo" --amount --type
+1728503849627:expense-tracker update --id 7 --description "nuevo" --amount 10 --type
+1728503857982:expense-tracker update --id 7 --description "nuevo" --amount "" --type
+1728503866399:expense-tracker update --id 7 --description --amount 100 --type
+1728503875269:expense-tracker update --id 7 --description --amount --type
+1728503878875:expense-tracker update --id --description "nuevo" --amount 100 --type
+1728518720817:expense-tracker add --description "test" --amount 10
+1728518737801:help
+1728518952889:expense-tracker add --description "test" --amount 1
+1728518958959:xpense-tracker add --description "test" --amount 10
+1728518969232:xpense-tracker add --description "test" --amount 1e
+1728518978619:expense-tracker add --description "test" --amount 1e
+1728518984619:expense-tracker add --description "test" --amount 10
+1728518990240:clear
+1728519279762:expense-tracker add --description "test" --amount 10
+1728519407784:a}
+1728519538952:expense-tracker add --description "test" --amount 10
+1728519774553:d
+1728519858470:expense-tracker add --description "test" --amount 10
+1728520007081:package com.roadmap.garyn.expense.tracker.exception;
+1728520007096:import org.springframework.shell.command.CommandExceptionResolver;
+1728520007103:import org.springframework.shell.command.CommandHandlingResult;
+1728520007112:public class CLIExceptionResolver implements CommandExceptionResolver {
+1728520007144:}
+1728520009904:CLEAR
+1728520011346:clear
+1728520028919:expense-tracker add --description "prueba" --amount 10
+1728520040884:expense-tracker add --description "prueba" --amount "10"
+1728520141754:expense-tracker add --description "prueba" --amount 10
+1728520707549:expense-tracker add --description "probando" --amount 10
+1728523310445:expense-tracker add --description "prueba" --amount 0
+1728525055577:expense-tracker add
+1728525079987:expense-tracker add --amount
+1728525254088:expense-tracker add --amount 0
+1728525268440:expense-tracker add --amount 10
+1728525278709:expense-tracker add --amount 10 --description
+1728525327006:expense-tracker add --amount "" --description
+1728525337881:expense-tracker add --amount "" --description ""
+1728525365362:expense-tracker add --amount --description
+1728525422653:expense-tracker add --amount 0 --description "ingreso"
+1728525428855:expense-tracker add --amount 10 --description "ingreso"
+1728525435013:expense-tracker add --amount 10 --description "ingreso" --type
+1728525446097:expense-tracker add --amount 10 --description "ingreso" --type utilities
+1728525451475:expense-tracker add --amount 10 --description "ingreso" --type ""
+1728525508110:expense-tracker add --amount --description --type
+1728525516219:expense-tracker add --amount 10 --description "ingreso" --type casa
+1728529528871:expense-tracker add --description --amount --type
+1728529537875:expense-tracker add --description "nigga" --amount --type
+1728529549745:expense-tracker add --description "nigga" --amount "" --type ""
+1728529601988:expense-tracker add --description "" --amount "" --type ""
+1728529613830:expense-tracker add --description --amount --type ""
+1728529624360:expense-tracker add --description --amount --type
+1728529641131:expense-tracker add --description "ni" --amount 0 --type
+1728529651384:expense-tracker add --description "ni" --amount 0 --type "utilities"
+1728529659299:expense-tracker add --description "ni" --amount 10 --type "utilities"
+1728529668025:expense-tracker add --description "i" --amount 10 --type "utilities"
+1728529695766:expense-tracker add --description "nigga" --amount 10 --type "ula"
+1728529885701:expense-tracker update --description --amount --type
+1728530430327:expense-tracker update --description --amount
+1728530714482:expense-tracker update
+1728530839633:expense-tracker update --id
+1728530938778:expense-tracker update --id 1 --description
+1728533362411:expense-tracker update --id --description
+1728533629665:expense-tracker save --description "hola" --amount
+1728533640712:expense-tracker add --description "hola" --amount
+1728533686123:expense-tracker update
+1728533747836:expense-tracker update --id
+1728533753772:expense-tracker update --id ""
+1728533830591:expense-tracker update --id
+1728533835169:expense-tracker update
+1728533959831:expense-tracker update --id
+1728533966433:expense-tracker update --id ""
+1728533972087:expense-tracker update --id " "
+1728533986443:expense-tracker update --id @
+1728534207347:expense-tracker update
+1728534210405:expense-tracker update --id
+1728534215464:expense-tracker update --id @
+1728536115316:expense-tracker update
+1728536149208:d
+1728536154413:expense-tracker update --id
+1728536159844:expense-tracker update --id ""
+1728536166061:expense-tracker update --id " "
+1728536170931:expense-tracker update --id 1
+1728536192741:expense-tracker update --id 1 --description "h"
+1728538244946:expense-tracker update --id 1 --description "h" --amount
+1728538251736:expense-tracker update --id 1 --description "h" --amount 10
+1728538263501:expense-tracker update --id 1 --description "hola" --amount 10
+1728538340399:expense-tracker update --id 1 --description "h" --amount 10
+1728538346639:expense-tracker update --id 2 --description "h" --amount 10
+1728538352442:clear
+1728538453703:expense-tracker update --id 2 --description "hola" --amount 10
+1728538539885:expense-tracker update --id 2 --description "hola" --amount -1
+1728539156404:clear
+1728539203330:expense-tracker update --id 2 --description "hola" --amount -1
+1728539212702:clear
+1728539225367:expense-tracker update --id 2 --type utilities
+1728539397397:shell:>
+1728539464010:expense-tracker update --id 2 --type other
+1728539636269:help
+1728539654246:expense-tracker update --id 1 --type other
+1728539684712:expense-tracker update --id 3 --description "expense 3"
+1728539728617:expense-tracker update --id 3 --description "1"
+1728539759867:expense-tracker update --id 3 --description "description"
+1728539783984:stacktrace
+1728540533630:expense-tracker update --id 3 --description "description"
+1728540549125:expense-tracker update --id 4 --description "description"
+1728540559975:expense-tracker update --id 3 --description "h"
+1728625690108:expense-tracker update --id 2 --description "fuentes"
+1728625707198:expense-tracker update --id 2 --description "fu"
+1728625715382:expense-tracker update --id 2 --description "f"
+1728626125120:DataAccessException
+1728626146324:expense-tracker update --id 2 --description "f"
+1728626491292:expense-tracker update --id 2 --description "feo"
+1728626742766:expense-tracker update --id
+1728626746998:expense-tracker update --id 2
+1728626895149:expense-tracker update --id -1
+1728626899687:expense-tracker update --id @
+1728626904766:expense-tracker update --id 2
+1728627040690:expense-tracker update --id 1
+1728627045342:expense-tracker update --id 2
+1728663586110:expense-tracker update
+1728663591268:expense-tracker update --id
+1728663595776:expense-tracker update --id 2
+1728663608057:expense-tracker update --id 2 --description "11 de octubre"
+1728663636755:expense-tracker update --id 2 --type utilities
+1728663810584:expense-tracker update --id 2 --type utiliti
+1728664813494:expense-tracker update
+1728664818311:expense-tracker update --id
+1728664825302:expense-tracker update --id 2 --amount 0
+1728664892954:expense-tracker update --id 2 ..amount 10
+1728664903161:expense-tracker update --id 2 --amount 10
+1728669893714:expense-tracker total
+1728674622597:expense-tracker type
+1728674707619:expense-tracker find-by-type
+1728674720671:expense-tracker find-by-type --type
+1728674740313:expense-tracker find-by-type --type ""
+1728674749235:expense-tracker find-by-type --type "hola"
+1728674757511:expense-tracker find-by-type --type other
+1728674803478:expense-tracker find-by-type --type utilities
+1728674813965:expense-tracker find-by-type --type food
+1728677208800:expense-tracker export-csv

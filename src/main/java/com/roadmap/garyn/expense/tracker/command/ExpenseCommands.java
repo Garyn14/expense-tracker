@@ -1,52 +1,46 @@
 package com.roadmap.garyn.expense.tracker.command;
 
+import com.roadmap.garyn.expense.tracker.converter.CastTypes;
 import com.roadmap.garyn.expense.tracker.enums.ExpenseType;
+import com.roadmap.garyn.expense.tracker.exception.InvalidTypeException;
+import com.roadmap.garyn.expense.tracker.exception.NullArgumentException;
 import com.roadmap.garyn.expense.tracker.model.Expense;
 import com.roadmap.garyn.expense.tracker.service.ExpenseService;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 import java.math.BigDecimal;
-import java.util.Set;
 
 @ShellComponent
 public class ExpenseCommands {
-
     private final ExpenseService expenseService;
+    private final CastTypes castTypes;
+    private static final String DEFAULT_TYPE = "OTHER";
 
     @Autowired
-    public ExpenseCommands(ExpenseService expenseService) {
+    public ExpenseCommands(ExpenseService expenseService, CastTypes  castTypes) {
         this.expenseService = expenseService;
+        this.castTypes = castTypes;
     }
 
     @ShellMethod(key = "expense-tracker add", value = "Save an expense")
-    public String saveExpense(
+    public String createExpense(
             @ShellOption(defaultValue = "") String description,
-            @ShellOption(defaultValue = "") String  amount,
-            @ShellOption(defaultValue = "OTHER") String type
+            @ShellOption(defaultValue = "") String amount,
+            @ShellOption(defaultValue = DEFAULT_TYPE) String type
     ) {
-
         ExpenseType expenseType;
         BigDecimal parsedAmount;
 
         try {
-            expenseType = ExpenseType.valueOf(type.toUpperCase());
+            parsedAmount = castTypes.castToBigDecimal(amount);
+            expenseType = castTypes.castToExpenseType(type);
+        } catch (NullPointerException e) {
+            throw new NullArgumentException("ERROR: fields are required");
         } catch (IllegalArgumentException e) {
-            return "ERROR: Invalid expense type. Please use 'food', 'transportation', " +
-                    "'utilities' or 'entertainment'.\nThe default value of 'type' is other";
-        } catch (NullPointerException e) {
-            return "ERROR: Expense type is required";
-        }
-
-        try {
-            parsedAmount = new BigDecimal(amount);
-        } catch (NumberFormatException e) {
-            return "ERROR: Invalid amount. Please enter a valid number";
-        } catch (NullPointerException e) {
-            return "ERROR: Amount is required";
+            throw new InvalidTypeException("ERROR: Invalid expense type. Please use 'food', 'transportation', " +
+                    "'utilities' or 'entertainment' ");
         }
 
         Expense expense = Expense.builder()
@@ -55,45 +49,91 @@ public class ExpenseCommands {
                 .expenseType(expenseType)
                 .build();
 
-        try {
-            return expenseService.saveExpense(expense);
-        } catch (ConstraintViolationException ex) {
-
-            Set<ConstraintViolation<?>> violations = ex.getConstraintViolations();
-            return "ERROR -> " + violations.stream()
-                    .map(v -> v.getPropertyPath()
-                            .toString()
-                            .substring(v.getPropertyPath()
-                                    .toString()
-                                    .lastIndexOf('.') + 1
-                            ) + ": " + v.getMessage()
-                    )
-                    .sorted()
-                    .findFirst()
-                    .orElse("Unknown error");
-        }
-
+        Expense expenseCreated = expenseService.createExpense(expense);
+        return "Expense added successfully (ID: " + expenseCreated.getId() + ")";
     }
-
 
     @ShellMethod(key = "expense-tracker list", value = "Get all expenses")
     public String getExpenses() {
         return expenseService.getExpenses();
     }
 
+    @ShellMethod(key = "expense-tracker update", value = "Update an expense")
+    public String updateExpense(
+            @ShellOption(defaultValue = "") String id,
+            @ShellOption(defaultValue = "") String description,
+            @ShellOption(defaultValue = "") String amount,
+            @ShellOption(defaultValue = "") String type
+    ) {
+        Long idLong;
+        BigDecimal parsedAmount = null;
+        ExpenseType expenseType = null;
+
+        try{
+            if (id == null || id.isEmpty())
+                throw new NullArgumentException("ERROR: Id is required");
+
+            idLong = castTypes.castToLong(id);
+
+            if (amount != null && !amount.isEmpty())
+                parsedAmount = castTypes.castToBigDecimal(amount);
+
+            if  (type != null && !type.isEmpty())
+                expenseType = castTypes.castToExpenseType(type);
+
+            if (description.isEmpty())
+                description = null;
+
+        } catch (NullPointerException e) {
+            throw new NullArgumentException("ERROR: Fields are required");
+        } catch (NumberFormatException e) {
+            throw new NumberFormatException("ERROR: enter a validator number");
+        } catch (IllegalArgumentException e) {
+            throw new InvalidTypeException("ERROR: Invalid expense type. Please use 'food', 'transportation', " +
+                    "'utilities' or 'entertainment' ");
+        }
+
+        Expense expenseUpdated = expenseService.updateExpense(idLong, description, parsedAmount, expenseType);
+        return "Expense with ID:" + expenseUpdated.getId() + " updated successfully";
+    }
+
     @ShellMethod(key = "expense-tracker delete", value = "Delete an expense by id")
     public String deleteExpense(@ShellOption(defaultValue = "") String id) {
 
         long idLong;
-        if (id == null || id.isEmpty()) return "ERROR: Id is required";
+        if (id == null || id.isEmpty()) throw new NullArgumentException("ERROR: Id is required");
 
         try {
             idLong = Long.parseLong(id);
         } catch (NumberFormatException e) {
-            return "ERROR: Invalid id";
+            throw new NumberFormatException("ERROR: enter a validator number");
         }
 
         if (idLong <= 0) return "ERROR: Invalid id";
         return expenseService.deleteExpense(idLong);
+    }
+
+    @ShellMethod(key = "expense-tracker total", value = "Get total expenses")
+    public String getTotalExpenses() {
+        return "Total expenses: " + expenseService.getExpenseTotal();
+    }
+
+    @ShellMethod(key = "expense-tracker find-by-type", value = "Get expenses by type")
+    public String getExpensesByType(@ShellOption String type) {
+        ExpenseType expenseType;
+        try {
+            expenseType = castTypes.castToExpenseType(type);
+        } catch (IllegalArgumentException e) {
+            throw new InvalidTypeException("ERROR: Invalid expense type. Please use 'food', 'transportation', " +
+                    "'utilities' or 'entertainment' ");
+        } catch (NullPointerException e) {
+            throw new NullArgumentException("ERROR: Type is required");
+        }
+        return expenseService.getExpensesByType(expenseType);
+    }
+
+    @ShellMethod(key = "expense-tracker export-csv", value = "Export expenses to CSV file")
+    public String getExpensesCsv(){
+        return expenseService.getExpensesCsv();
     }
 }
