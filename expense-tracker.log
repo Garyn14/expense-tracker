@@ -407,3 +407,8 @@
 1728674803478:expense-tracker find-by-type --type utilities
 1728674813965:expense-tracker find-by-type --type food
 1728677208800:expense-tracker export-csv
+1728679159965:expense-tracker list
+1728679633736:expense-tracker summary
+1728679636973:$ expense-tracker summary
+1728679652787:# Total expenses: $20expense-tracker total
+1728680377496:expense-tracker total
